@@ -8,7 +8,7 @@ const Product = ({product, addToCart}) => {
     <b></b>
     <h3>{product.title}</h3>
     <b></b>
-    <p>{product.price}</p>
+    <p>{product.price}$</p>
     <button onClick={addToCart}>Add to cart</button>
   </div>;
 };
