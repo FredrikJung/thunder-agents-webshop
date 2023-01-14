@@ -5,15 +5,11 @@ import Product from "./Product";
 const Productlist = () => {
     const { data: products } = useFetch("https://fakestoreapi.com/products");
 
-    const addToCart = () => {
-
-    }
-
   return (
-    <div>
+    <div className="products">
         {products?.map((product) => {
             return(
-            <Product key={product.id} product={product} addToCart={addToCart}/>
+            <Product key={product.id} product={product}/>
             );
         })}
     </div>
