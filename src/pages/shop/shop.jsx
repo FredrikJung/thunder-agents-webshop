@@ -9,7 +9,7 @@ export const Shop = () => {
       {products?.map((productsItem) => {
         return (
           <div>
-            <img src={productsItem.image}></img>
+            <img src={productsItem.image} alt="product"></img>
             <div key={productsItem.id}>{productsItem.title}</div>
           </div>
         );
