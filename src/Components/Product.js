@@ -1,7 +1,11 @@
 import React from "react";
 
 
-const Product = ({product, addToCart}) => {
+const Product = ({product}) => {
+
+    const addToCart = () => {
+        console.log("adding " + product.title + " to cart");
+    }
   return <div className="product">
     
     <img src={product.image} alt="product"></img>

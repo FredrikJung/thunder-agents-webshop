@@ -17,8 +17,12 @@ code {
  flex-direction: row;
 }
 
-.product{
+.products{
   display: flex;
-  flex-direction: column;
-  width: 10%;
 }
+
+.product img{
+  width: 30%;
+  height: 30%;
+}
+
