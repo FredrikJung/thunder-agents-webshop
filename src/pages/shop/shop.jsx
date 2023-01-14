@@ -1,19 +1,12 @@
 import React from "react";
-import useFetch from "../../Components/useFetch";
+import useFetch from "../../Components/UseFetch";
+import Productlist from "../../Components/Productlist";
 
 export const Shop = () => {
-  const { data: products } = useFetch("https://fakestoreapi.com/products");
 
   return (
-    <div>
-      {products?.map((productsItem) => {
-        return (
-          <div>
-            <img src={productsItem.image} alt="product"></img>
-            <div key={productsItem.id}>{productsItem.title}</div>
-          </div>
-        );
-      })}
+    <div className="container">
+      <Productlist/>
     </div>
   );
 };

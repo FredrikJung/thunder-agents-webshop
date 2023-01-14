@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Navbar } from "./Components/navbar";
 import { Shop } from "./pages/shop/shop";
 import { Cart } from "./pages/cart/cart";
+import Productlist from "./Components/Productlist";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
         </Routes>
       </Router>
+      <Shop/>
     </div>
   );
 }
