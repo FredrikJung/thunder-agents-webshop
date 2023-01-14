@@ -30,3 +30,7 @@ code {
   width:40px;
 }
 
+.product-input{
+  display: flex;
+}
+
