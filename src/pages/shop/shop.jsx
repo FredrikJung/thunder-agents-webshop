@@ -7,7 +7,12 @@ export const Shop = () => {
   return (
     <div>
       {products?.map((productsItem) => {
-        return <li key={productsItem.id}>{productsItem.title}</li>;
+        return (
+          <div>
+            <img src={productsItem.image}></img>
+            <div key={productsItem.id}>{productsItem.title}</div>
+          </div>
+        );
       })}
     </div>
   );
