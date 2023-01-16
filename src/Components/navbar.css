@@ -26,3 +26,25 @@
 .thunderAgents{
     height: 75px; width: 250px; overflow: hidden;
 }
+
+@media screen and (max-width: 600px){
+
+    .navbar{
+      width: auto;
+      height: 79px;
+    }
+
+    .thunderAgents{
+        display:none;
+    }
+
+    .links a{
+        margin-top: 23px;
+    }
+
+    
+  
+    
+  
+  
+  }

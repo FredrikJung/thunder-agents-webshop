@@ -30,6 +30,7 @@ code {
   /* Styling för en produkt-boxen */
   display: flex;
   flex-basis: 30%;
+  width: 600px;
   flex-direction: column;
   justify-content: center;
   height: auto;
@@ -97,4 +98,16 @@ input{
   justify-content: flex-start;
   margin-top: 20px;
   margin-left: 15px;
+}
+
+@media screen and (max-width: 600px){
+
+  .product{
+    width: auto;
+    flex-basis: 45%;
+  }
+
+  
+
+
 }
