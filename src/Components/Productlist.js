@@ -1,5 +1,5 @@
 import React from "react";
-import useFetch from "./UseFetch";
+import UseFetch from "./UseFetch";
 import Product from "./Product";
 
 const Productlist = () => {
