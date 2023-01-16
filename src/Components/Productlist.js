@@ -3,7 +3,7 @@ import UseFetch from "./UseFetch";
 import Product from "./Product";
 import {useState} from "react";
 
-const Productlist = () => {
+const Productlist = ({ addToCart }) => {
   const {
     data: products,
     loading,
@@ -34,7 +34,7 @@ const Productlist = () => {
           return products;
         }
       }).map((product) => {
-        return <Product key={product.id} product={product} />;
+        return <Product key={product.id} product={product} addToCart={addToCart}/>;
       })}
     </div>
   );

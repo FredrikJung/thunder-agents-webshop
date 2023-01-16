@@ -1,10 +1,11 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import Productlist from "../../Components/Productlist";
 
-export const Shop = () => {
+export const Shop = ({ addToCart }) => {
+
   return (
     <div className="container">
-      <Productlist />
+      <Productlist addToCart = { addToCart }/>
     </div>
   );
 };
