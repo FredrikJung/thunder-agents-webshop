@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
 const Product = ({ product, addToCart }) => {
   const [ cartAmount, setAmount ] = useState("");
@@ -22,7 +24,7 @@ const Product = ({ product, addToCart }) => {
       </div>
       <div className="product-input">
         <input type="number" onChange={(e) => setAmount(e.target.value)}></input>
-        <button value={product.id} onClick={onSubmit}>Add to cart</button>
+        <Button style={{backgroundColor: "black", width: 132}}variant="contained" value={product.id} onClick={onSubmit}>Add to cart</Button>
       </div>
     </div>
   );
