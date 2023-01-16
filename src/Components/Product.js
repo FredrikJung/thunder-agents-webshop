@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Product = ({ product }) => {
-  const addToCart = () => {
-    console.log("adding " + product.title + " to cart");
+const Product = ({ product, addToCart }) => {
+  const [ cartAmount, setAmount ] = useState("");
+
+  const onSubmit = () => {
+    //console.log("adding " + product.title + " to cart ");
+    const cart = {
+      amount: cartAmount,
+      product: product
+    }
+    addToCart(cart);
   };
   return (
     <div className="product">
@@ -14,8 +21,8 @@ const Product = ({ product }) => {
         <p>{product.price}$</p>
       </div>
       <div className="product-input">
-        <input type="number"></input>
-        <button onClick={addToCart}>Add to cart</button>
+        <input type="number" onChange={(e) => setAmount(e.target.value)}></input>
+        <button value={product.id} onClick={onSubmit}>Add to cart</button>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import UseFetch from "./UseFetch";
 import Product from "./Product";
 
-const Productlist = () => {
+const Productlist = ({ addToCart }) => {
   const {
     data: products,
     loading,
@@ -14,7 +14,7 @@ const Productlist = () => {
       {error && <div>{error}</div>}
       {loading && <div>Loading...</div>}
       {products?.map((product) => {
-        return <Product key={product.id} product={product} />;
+        return <Product key={product.id} product={product} addToCart={addToCart}/>;
       })}
     </div>
   );
