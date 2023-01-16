@@ -4,6 +4,7 @@ import { Navbar } from "./Components/navbar";
 import { Shop } from "./pages/shop/shop";
 import { Cart } from "./pages/cart/cart";
 import { useState } from "react";
+import Footer from "./Components/Footer"
 
 function App() {
   const [ cart, setCart ] = useState([]);
@@ -30,6 +31,7 @@ function App() {
           <Route path="/cart" element={<Cart cart={ cart }/>} />
         </Routes>
       </Router>
+      <Footer/>
     </div>
   );
 }
