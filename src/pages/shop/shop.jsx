@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Productlist from "../../Components/Productlist";
 
 export const Shop = ({ addToCart }) => {
