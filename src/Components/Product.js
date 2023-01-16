@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from '@mui/material/Button';
 
 const Product = ({ product, addToCart }) => {
-  const [ cartAmount, setAmount ] = useState("");
+  const [ cartAmount, setAmount ] = useState(null);
 
   const onSubmit = () => {
     //console.log("adding " + product.title + " to cart ");
@@ -22,7 +22,7 @@ const Product = ({ product, addToCart }) => {
         <p>{product.price}$</p>
       </div>
       <div className="product-input">
-        <input type="number" onChange={(e) => setAmount(e.target.value)}></input>
+        <input type="number" min={0}value={cartAmount} onChange={(e) => setAmount(e.target.value)}></input>
         <Button style={{backgroundColor: "black", width: 132}}variant="contained" value={product.id} onClick={onSubmit}>Add to cart</Button>
       </div>
     </div>
