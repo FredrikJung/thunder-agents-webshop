@@ -6,6 +6,7 @@ import { Cart } from "./pages/cart/cart";
 import { useState } from "react";
 import Footer from "./Components/Footer";
 import { Checkout } from "./pages/checkout/checkout";
+import { OrderPlaced } from "./pages/orderPlaced/orderPlaced";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -53,6 +54,7 @@ function App() {
             }
           />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/orderPlaced" element={<OrderPlaced />} />
         </Routes>
       </Router>
       <Footer />

@@ -108,14 +108,43 @@ input{
   min-height: 100vh;
 }
 
+.shipping-firstname{
+  display: flex;
+  justify-content: center;
+}
+
+.shipping-lastname{
+  display: flex;
+  justify-content: center;
+}
+
+.shipping-streetaddress{
+  display: flex;
+  justify-content: center;
+}
+
+.shipping-code{
+  display: flex;
+  justify-content: center;
+}
+
+.shipping-city{
+  display: flex;
+  justify-content: center;
+}
+
+ a {
+  text-decoration: none;
+}
+
+.order-placed{
+  min-height: 100vh;
+}
+
 @media screen and (max-width: 600px){
 
   .product{
     width: auto;
     flex-basis: 45%;
   }
-
-  
-
-
 }
