@@ -5,12 +5,13 @@ import { Shop } from "./pages/shop/shop";
 import { Cart } from "./pages/cart/cart";
 import { useState } from "react";
 import Footer from "./Components/Footer";
+import { Checkout } from "./pages/checkout/checkout";
 
 function App() {
   const [cart, setCart] = useState([]);
   const [totalAmount, setTotalAmount] = useState(0);
   let match = false;
-  
+
   const addToCart = (cartShop) => {
     cart.map((cartItem) => {
       if (cartItem.product.id === cartShop.product.id) {
@@ -51,6 +52,7 @@ function App() {
               />
             }
           />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </Router>
       <Footer />

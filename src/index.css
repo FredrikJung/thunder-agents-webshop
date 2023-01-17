@@ -104,6 +104,10 @@ input{
   min-height: 100vh;
 }
 
+.checkout{
+  min-height: 100vh;
+}
+
 @media screen and (max-width: 600px){
 
   .product{
