@@ -5,9 +5,8 @@ const Product = ({ product, addToCart }) => {
   const [ cartAmount, setAmount ] = useState(null);
 
   const onSubmit = () => {
-    //console.log("adding " + product.title + " to cart ");
     const cart = {
-      amount: cartAmount,
+      amount: parseInt(cartAmount),
       product: product
     }
     addToCart(cart);

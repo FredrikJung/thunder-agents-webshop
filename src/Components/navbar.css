@@ -24,7 +24,11 @@
 }
 
 .thunderAgents{
-    height: 75px; width: 250px; overflow: hidden;
+    height: 75px; width: 250px; overflow: hidden; 
+}
+
+.Amount {
+    color: white;
 }
 
 @media screen and (max-width: 600px){

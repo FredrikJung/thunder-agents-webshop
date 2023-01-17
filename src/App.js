@@ -8,24 +8,28 @@ import Footer from "./Components/Footer"
 
 function App() {
   const [ cart, setCart ] = useState([]);
+  const [ totalAmount, setTotalAmount]  = useState(0);
+  let match = false;
 
   const addToCart = (cartShop) => {
-    const id = cartShop.product.id;
-    console.log(id);
-    cart.map(cartItem => {
-      if ( cartItem.id === id ) {
-        cartItem.amount += cartShop.amount;
+    setTotalAmount(totalAmount + cartShop.amount);
+    console.log(totalAmount);
+    cart.map((cartItem)=> {
+      if (cartItem.product.id === cartShop.product.id) {
+        cartItem.amount = cartItem.amount + cartShop.amount;
+        match = true;
       }
     })
-    const newCart = [...cart, cartShop]
-    setCart(newCart);
+    if (!match) {
+      setCart([...cart, cartShop]);
+      match = false;
+    }
   }
-  //console.log(cart);
 
   return (
     <div className="App">
       <Router>
-        <Navbar />
+        <Navbar totalAmount={ totalAmount }/>
         <Routes>
           <Route path="/" element={<Shop addToCart={ addToCart }/>} />
           <Route path="/cart" element={<Cart cart={ cart }/>} />
