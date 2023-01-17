@@ -37,6 +37,7 @@ function App() {
                 addToCart={addToCart}
                 totalAmount={totalAmount}
                 setTotalAmount={setTotalAmount}
+                cart={cart}
               />
             }
           />

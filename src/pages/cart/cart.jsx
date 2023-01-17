@@ -4,13 +4,13 @@ export const Cart = ({ cart, setTotalAmount, addToCart }) => {
 
   const onChangeHandler = (amount, productId) => {
     setTotalAmount(parseInt(amount));
-    const cart = {
+    const purchase = {
       amount: parseInt(amount),
       product: {
         id: productId
       }
     }
-    addToCart(cart);
+    addToCart(purchase);
   };
 
   return (
