@@ -8,7 +8,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-const Productlist = ({ addToCart }) => {
+const Productlist = ({ addToCart, totalAmount, setTotalAmount }) => {
   const {
     data: products,
     loading,
@@ -60,6 +60,8 @@ const Productlist = ({ addToCart }) => {
                 key={product.id}
                 product={product}
                 addToCart={addToCart}
+                totalAmount={ totalAmount } 
+                setTotalAmount={ setTotalAmount }
               />
             );
           })}

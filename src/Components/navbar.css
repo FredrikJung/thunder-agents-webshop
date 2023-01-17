@@ -1,54 +1,56 @@
-.navbar{
-    background-color: black;
-    text-decoration: none;
-    color: white;
-    justify-content: space-between;
-  }
+.navbar {
+  background-color: black;
+  text-decoration: none;
+  color: white;
+  justify-content: space-between;
+}
 
 .links {
-    margin-right: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  margin-right: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .links a {
-    text-decoration: none;
-    color: white;
-    margin-left: 50px;
-    font-size: 25px;
+  text-decoration: none;
+  color: white;
+  margin-left: 50px;
+  font-size: 25px;
 }
 
 .links a:hover {
-    color: grey;
+  color: grey;
 }
 
-.thunderAgents{
-    height: 75px; width: 250px; overflow: hidden; 
+.thunderAgents {
+  height: 75px;
+  width: 250px;
+  margin-top: 20px;
+  overflow: hidden;
 }
 
-.Amount {
-    color: white;
+.cartBox {
+  color: white;
+  display: flex;
+  align-items: center;
 }
 
-@media screen and (max-width: 600px){
-
-    .navbar{
-      width: auto;
-      height: 79px;
-    }
-
-    .thunderAgents{
-        display:none;
-    }
-
-    .links a{
-        margin-top: 23px;
-    }
-
-    
-  
-    
-  
-  
+@media screen and (max-width: 600px) {
+  .navbar {
+    width: auto;
+    height: 79px;
   }
+
+  .thunderAgents {
+    display: none;
+  }
+
+  .links a {
+    margin-top: 11px;
+  }
+
+  .cartBox {
+    margin-top: 11px;
+  }
+}

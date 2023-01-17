@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import Button from '@mui/material/Button';
 
-const Product = ({ product, addToCart }) => {
-  const [ cartAmount, setAmount ] = useState(null);
+const Product = ({ product, addToCart, totalAmount, setTotalAmount }) => {
+  const [ productAmount, setProductAmount ] = useState(null);
 
   const onSubmit = () => {
+    setTotalAmount(totalAmount + parseInt(productAmount));
     const cart = {
-      amount: parseInt(cartAmount),
+      amount: parseInt(productAmount),
       product: product
     }
     addToCart(cart);
@@ -21,7 +22,7 @@ const Product = ({ product, addToCart }) => {
         <p>{product.price}$</p>
       </div>
       <div className="product-input">
-        <input type="number" min={0} onChange={(e) => setAmount(e.target.value)}></input>
+        <input type="number" min={0} onChange={(e) => setProductAmount(e.target.value)} value={productAmount} ></input>
         <Button style={{backgroundColor: "black", width: 132}}variant="contained" value={product.id} onClick={onSubmit}>Add to cart</Button>
       </div>
     </div>

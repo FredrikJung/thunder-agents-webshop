@@ -54,7 +54,7 @@ code {
 
 }
 
-.product img{
+img{
   /* Styling för produktens bild */
   align-items: center;
   width: auto;
@@ -98,6 +98,10 @@ input{
   justify-content: flex-start;
   margin-top: 20px;
   margin-left: 15px;
+}
+
+.cart {
+  min-height: 100vh;
 }
 
 @media screen and (max-width: 600px){
