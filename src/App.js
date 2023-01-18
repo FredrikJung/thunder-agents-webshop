@@ -28,7 +28,11 @@ function App() {
 
   const removeFromCart = (productId) => {
     setCart(cart.filter((cartItem) => cartItem.product.id !== productId));
-  }
+  };
+  const removeAllFromCart = (productId) => {
+    setCart(cart.filter((cartItem) => cartItem.product.id === productId));
+    setTotalAmount(0);
+  };
   console.log(cart);
 
   return (
@@ -59,7 +63,10 @@ function App() {
               />
             }
           />
-          <Route path="/checkout" element={<Checkout />} />
+          <Route
+            path="/checkout"
+            element={<Checkout removeAllFromCart={removeAllFromCart} />}
+          />
           <Route path="/orderPlaced" element={<OrderPlaced />} />
         </Routes>
       </Router>
