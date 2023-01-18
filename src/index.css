@@ -102,6 +102,27 @@ input{
 
 .cart {
   min-height: 100vh;
+  margin-top: 50px;
+  
+}
+
+.cart-product{
+  margin-bottom: 50px;
+}
+
+hr{
+  width: 80%;
+}
+
+.cart-btns{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  margin-top: 100px;
+}
+
+.checkout-btn{
+  margin-right: 10px;
 }
 
 .checkout{
@@ -146,5 +167,14 @@ input{
   .product{
     width: auto;
     flex-basis: 45%;
+  }
+
+  .cart-btns{
+    flex-direction: column;
+  }
+
+  .checkout-btn{
+    margin-right: 0px;
+    margin-bottom: 10px;
   }
 }
