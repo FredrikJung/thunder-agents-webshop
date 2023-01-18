@@ -10,7 +10,7 @@ export const Cart = ({
   removeFromCart,
 }) => {
   const onChangeHandler = (amount, productId) => {
-    if (amount == 0) {
+    if (amount === 0) {
       removeFromCart(productId);
     }
     cart.map((product) => {
@@ -19,6 +19,7 @@ export const Cart = ({
       } else if (amount < product.amount && product.product.id === productId) {
         setTotalAmount(totalAmount - 1);
       }
+      return false;
     });
 
     const purchase = {
@@ -68,7 +69,7 @@ export const Cart = ({
                   <hr></hr>
                 </div>
               );
-            }
+            } return false;
           })}
 
           <div className="cart-items-total-price-Name">

@@ -19,6 +19,7 @@ function App() {
         cartItem.amount = cartShop.amount;
         match = true;
       }
+      return false;
     });
     if (!match) {
       setCart([...cart, cartShop]);
