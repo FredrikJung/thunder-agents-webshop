@@ -106,7 +106,7 @@ export const Checkout = () => {
               backgroundColor: "black",
               width: 150,
               marginTop: 50,
-              marginBottom: 20,
+              marginBottom: 50,
             }}
             variant="contained"
           >

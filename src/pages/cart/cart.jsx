@@ -19,7 +19,7 @@ export const Cart = ({ cart, setTotalAmount, addToCart }) => {
       <div className="cart">
         {cart.map((cartItem) => {
           return (
-            <div key={cartItem.product.id}>
+            <div className="cart-product" key={cartItem.product.id}>
               <div>
                 <img src={cartItem.product.image} alt="product"></img>
                 <b></b>
@@ -27,7 +27,7 @@ export const Cart = ({ cart, setTotalAmount, addToCart }) => {
                 <b></b>
                 <p>{cartItem.product.price}$</p>
               </div>
-              <div className="product-input">
+              <div>
                 <input
                   type="number"
                   min={0}
@@ -37,27 +37,28 @@ export const Cart = ({ cart, setTotalAmount, addToCart }) => {
                   }
                 ></input>
               </div>
+              <hr></hr>
             </div>
           );
         })}
-      </div>
-      <div>
-        <Link to="/checkout">
-          <Button
-            style={{ backgroundColor: "black", width: 132 }}
-            variant="contained"
-          >
-            Proceed to checkout
-          </Button>
-        </Link>
-        <Link to="/">
-          <Button
-            style={{ backgroundColor: "black", width: 132 }}
-            variant="contained"
-          >
-            Back to shop
-          </Button>
-        </Link>
+        <div className="cart-btns">
+          <Link className="checkout-btn" to="/checkout">
+            <Button
+              style={{ backgroundColor: "black", width: 132 }}
+              variant="contained"
+            >
+              Proceed to checkout
+            </Button>
+          </Link>
+          <Link className="back-to-shop-btn" to="/">
+            <Button
+              style={{ backgroundColor: "black", width: 132 }}
+              variant="contained"
+            >
+              Back to shop
+            </Button>
+          </Link>
+        </div>
       </div>
     </div>
   );
