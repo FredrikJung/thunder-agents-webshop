@@ -27,9 +27,7 @@ const Product = ({ product, addToCart, totalAmount, setTotalAmount, cart }) => {
     <div className="product">
       <div className="product-main">
         <img src={product.image} alt="product"></img>
-        <b></b>
         <h3>{product.title}</h3>
-        <b></b>
         <p>${product.price}</p>
       </div>
       <div className="product-input">
