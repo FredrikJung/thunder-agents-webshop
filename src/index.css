@@ -160,6 +160,19 @@ input{
   margin-bottom: 50px;
 }
 
+.cart-items-total-price-Name{
+  color: red;
+}
+
+.cart-items-total-price{
+  font-weight: bold;
+}
+
+.cart-products-price{
+  font-weight: bold;
+  margin-top: 3px;
+}
+
 hr{
   width: 80%;
 }

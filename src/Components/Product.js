@@ -32,7 +32,7 @@ const Product = ({ product, addToCart, totalAmount, setTotalAmount, cart }) => {
         <b></b>
         <h3>{product.title}</h3>
         <b></b>
-        <p>{product.price}$</p>
+        <p>${product.price}</p>
       </div>
       <div className="product-input">
         <Button

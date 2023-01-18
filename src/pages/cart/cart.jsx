@@ -2,9 +2,17 @@ import React from "react";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 
-export const Cart = ({ cart, setTotalAmount, totalAmount, addToCart, removeFromCart }) => {
+export const Cart = ({
+  cart,
+  setTotalAmount,
+  totalAmount,
+  addToCart,
+  removeFromCart,
+}) => {
   const onChangeHandler = (amount, productId) => {
-    if(amount == 0) {removeFromCart(productId)}
+    if (amount == 0) {
+      removeFromCart(productId);
+    }
     cart.map((product) => {
       if (amount > product.amount && product.product.id === productId) {
         setTotalAmount(totalAmount + 1);
@@ -22,7 +30,12 @@ export const Cart = ({ cart, setTotalAmount, totalAmount, addToCart, removeFromC
     addToCart(purchase);
   };
 
-  const totalPrice = cart.reduce((price, cartItem) => price + cartItem.amount * cartItem.price, 0);
+  const totalPrice = cart
+    .reduce(
+      (price, cartItem) => price + cartItem.amount * cartItem.product.price,
+      0
+    )
+    .toFixed(2);
 
   return (
     <div>
@@ -37,7 +50,7 @@ export const Cart = ({ cart, setTotalAmount, totalAmount, addToCart, removeFromC
                     <b></b>
                     <h3>{cartItem.product.title}</h3>
                     <b></b>
-                    <p>{cartItem.product.price}$</p>
+                    <p>${cartItem.product.price}</p>
                   </div>
                   <div>
                     <input
@@ -51,19 +64,17 @@ export const Cart = ({ cart, setTotalAmount, totalAmount, addToCart, removeFromC
                   </div>
                   <div className="cart-products-price">
                     ${cartItem.amount * cartItem.product.price}
-                </div>
+                  </div>
                   <hr></hr>
                 </div>
               );
-            }  
+            }
           })}
-          
-            <div className="cart-items-total-price-Name">
-            Total price
-            <div className="cart-items-total-price">
-              ${totalPrice}
-            </div>          
-            </div>
+
+          <div className="cart-items-total-price-Name">
+            <h2>Total price</h2>
+            <div className="cart-items-total-price">${totalPrice}</div>
+          </div>
           <div className="cart-btns">
             <Link className="checkout-btn" to="/checkout">
               <Button
