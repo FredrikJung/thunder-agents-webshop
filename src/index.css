@@ -219,6 +219,12 @@ hr{
     flex-basis: 45%;
   }
 
+  .product-input{
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0px
+  }
+
   .cart-btns{
     flex-direction: column;
   }
@@ -247,6 +253,8 @@ hr{
   .cartBox {
     margin-top: 11px;
   }
+
+
 }
 
 /*MEDIAQUERY NABAREN SLUT*/

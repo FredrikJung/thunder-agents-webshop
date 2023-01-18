@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Button from "@mui/material/Button";
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 const Product = ({ product, addToCart, totalAmount, setTotalAmount, cart }) => {
   const [productAmount, setProductAmount] = useState(null);
@@ -10,7 +10,7 @@ const Product = ({ product, addToCart, totalAmount, setTotalAmount, cart }) => {
       if (cartItem.product.id === product.id && cartItem.amount !== 0) {
         return setProductAmount(cartItem.amount);
       }
-      return false
+      return false;
     });
   }, [cart, product.id]);
 
@@ -36,14 +36,19 @@ const Product = ({ product, addToCart, totalAmount, setTotalAmount, cart }) => {
       </div>
       <div className="product-input">
         <Button
-          style={{ backgroundColor: "black", width: 145 }}
+          style={{ backgroundColor: "black", width: 110 }}
           variant="contained"
           value={product.id}
           onClick={onSubmit}
         >
-          Add to cart 
+          Add
         </Button>
-        {productAmount && <div><AddShoppingCartIcon/> ({productAmount})</div>}
+        {productAmount && (
+          <div>
+            <AddShoppingCartIcon style={{ marginLeft: 5, marginTop: 7 }} /> (
+            {productAmount})
+          </div>
+        )}
       </div>
     </div>
   );
