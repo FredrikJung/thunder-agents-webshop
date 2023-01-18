@@ -33,7 +33,6 @@ function App() {
     setCart(cart.filter((cartItem) => cartItem.product.id === productId));
     setTotalAmount(0);
   };
-  console.log(cart);
 
   return (
     <div className="App">

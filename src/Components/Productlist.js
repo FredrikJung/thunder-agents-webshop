@@ -60,7 +60,7 @@ const Productlist = ({ addToCart, totalAmount, setTotalAmount, cart }) => {
                 key={product.id}
                 product={product}
                 addToCart={addToCart}
-                totalAmount={totalAmount} 
+                totalAmount={totalAmount}
                 setTotalAmount={setTotalAmount}
                 cart={cart}
               />
