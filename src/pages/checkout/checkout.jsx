@@ -4,7 +4,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 
-export const Checkout = ({removeAllFromCart}) => {
+export const Checkout = ({ removeAllFromCart }) => {
   return (
     <div className="checkout">
       <Box
@@ -94,7 +94,7 @@ export const Checkout = ({removeAllFromCart}) => {
         <div>
           <TextField
             id="outlined-basic"
-            label="CVS number"
+            label="CVC number"
             variant="outlined"
           />
         </div>
