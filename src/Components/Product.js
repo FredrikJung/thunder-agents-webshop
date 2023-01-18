@@ -17,12 +17,10 @@ const Product = ({ product, addToCart, totalAmount, setTotalAmount, cart }) => {
   const onSubmit = () => {
     setTotalAmount(totalAmount + 1);
     setProductAmount(productAmount + 1);
-    console.log(productAmount);
     const purchase = {
       amount: parseInt(productAmount + 1),
       product: product,
     };
-    console.log(purchase);
     addToCart(purchase);
   };
   return (
