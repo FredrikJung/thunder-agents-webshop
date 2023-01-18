@@ -22,6 +22,8 @@ export const Cart = ({ cart, setTotalAmount, totalAmount, addToCart, removeFromC
     addToCart(purchase);
   };
 
+  const totalPrice = cart.reduce((price, cartItem) => price + cartItem.amount * cartItem.price, 0);
+
   return (
     <div>
       {totalAmount > 0 ? (
@@ -47,15 +49,25 @@ export const Cart = ({ cart, setTotalAmount, totalAmount, addToCart, removeFromC
                       }
                     ></input>
                   </div>
+                  <div className="cart-products-price">
+                    ${cartItem.amount * cartItem.product.price}
+                </div>
                   <hr></hr>
                 </div>
               );
             }  
           })}
+          
+            <div className="cart-items-total-price-Name">
+            Total price
+            <div className="cart-items-total-price">
+              ${totalPrice}
+            </div>          
+            </div>
           <div className="cart-btns">
             <Link className="checkout-btn" to="/checkout">
               <Button
-                style={{ backgroundColor: "black", width: 132 }}
+                style={{ backgroundColor: "black", width: 215 }}
                 variant="contained"
               >
                 Proceed to checkout
@@ -63,7 +75,7 @@ export const Cart = ({ cart, setTotalAmount, totalAmount, addToCart, removeFromC
             </Link>
             <Link className="back-to-shop-btn" to="/">
               <Button
-                style={{ backgroundColor: "black", width: 132 }}
+                style={{ backgroundColor: "black", width: 142 }}
                 variant="contained"
               >
                 Back to shop
