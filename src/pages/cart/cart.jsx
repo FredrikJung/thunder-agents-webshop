@@ -31,7 +31,7 @@ export const Cart = ({ cart, setTotalAmount, totalAmount, addToCart }) => {
                 <div>
                   <input
                     type="number"
-                    min={0}
+                    min={1}
                     value={cartItem.amount}
                     onChange={(e) =>
                       onChangeHandler(e.target.value, cartItem.product.id)
