@@ -2,17 +2,10 @@ import React from "react";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 
-export const Cart = ({ cart, setTotalAmount, totalAmount, addToCart }) => {
+export const Cart = ({ cart, setTotalAmount, totalAmount, addToCart, removeFromCart }) => {
   const onChangeHandler = (amount, productId) => {
+    if(amount == 0) {removeFromCart(productId)}
     cart.map((product) => {
-      console.log(
-        "Amount:  " +
-          amount +
-          "product.amount:  " +
-          product.amount +
-          "ProductId:  " +
-          product.product.id
-      );
       if (amount > product.amount && product.product.id === productId) {
         setTotalAmount(totalAmount + 1);
       } else if (amount < product.amount && product.product.id === productId) {
@@ -57,7 +50,7 @@ export const Cart = ({ cart, setTotalAmount, totalAmount, addToCart }) => {
                   <hr></hr>
                 </div>
               );
-            }
+            }  
           })}
           <div className="cart-btns">
             <Link className="checkout-btn" to="/checkout">

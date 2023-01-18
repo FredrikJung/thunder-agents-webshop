@@ -24,8 +24,11 @@ function App() {
       setCart([...cart, cartShop]);
       match = false;
     }
-    
   };
+
+  const removeFromCart = (productId) => {
+    setCart(cart.filter((cartItem) => cartItem.product.id !== productId));
+  }
   console.log(cart);
 
   return (
@@ -51,6 +54,7 @@ function App() {
                 cart={cart}
                 setTotalAmount={setTotalAmount}
                 addToCart={addToCart}
+                removeFromCart={removeFromCart}
                 totalAmount={totalAmount}
               />
             }
