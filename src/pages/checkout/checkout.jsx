@@ -4,7 +4,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 
-export const Checkout = () => {
+export const Checkout = ({removeAllFromCart}) => {
   return (
     <div className="checkout">
       <Box
@@ -102,6 +102,7 @@ export const Checkout = () => {
       <div>
         <Link to="/orderPlaced">
           <Button
+            onClick={removeAllFromCart}
             style={{
               backgroundColor: "black",
               width: 150,
