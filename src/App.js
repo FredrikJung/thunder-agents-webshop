@@ -50,6 +50,7 @@ function App() {
                 cart={cart}
                 setTotalAmount={setTotalAmount}
                 addToCart={addToCart}
+                totalAmount={totalAmount}
               />
             }
           />
