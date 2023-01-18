@@ -24,8 +24,9 @@ function App() {
       setCart([...cart, cartShop]);
       match = false;
     }
-    console.log(cart);
+    
   };
+  console.log(cart);
 
   return (
     <div className="App">

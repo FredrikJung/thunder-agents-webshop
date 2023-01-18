@@ -1,30 +1,28 @@
 import React, { useEffect, useState } from "react";
 import Button from "@mui/material/Button";
-import {
-  ConstructionOutlined,
-  PrecisionManufacturing,
-} from "@mui/icons-material";
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 const Product = ({ product, addToCart, totalAmount, setTotalAmount, cart }) => {
-  const [productAmount, setProductAmount] = useState(0);
-  let previousAmount = 0;
+  const [productAmount, setProductAmount] = useState(null);
 
   useEffect(() => {
     cart.map((cartItem) => {
       if (cartItem.product.id === product.id && cartItem.amount !== 0) {
-        setProductAmount(cartItem.amount);
-        // previousAmount = cartItem.amount;
-        // console.log(cartItem.product.id);
+        return setProductAmount(cartItem.amount);
       }
+      return false
     });
-  }, [totalAmount]);
+  }, [cart, product.id]);
 
   const onSubmit = () => {
-    setTotalAmount(totalAmount + parseInt(productAmount));
+    setTotalAmount(totalAmount + 1);
+    setProductAmount(productAmount + 1);
+    console.log(productAmount);
     const purchase = {
-      amount: parseInt(productAmount),
+      amount: parseInt(productAmount + 1),
       product: product,
     };
+    console.log(purchase);
     addToCart(purchase);
   };
   return (
@@ -37,20 +35,15 @@ const Product = ({ product, addToCart, totalAmount, setTotalAmount, cart }) => {
         <p>{product.price}$</p>
       </div>
       <div className="product-input">
-        <input
-          type="number"
-          min={0}
-          onChange={(e) => setProductAmount(e.target.value)}
-          value={productAmount}
-        ></input>
         <Button
-          style={{ backgroundColor: "black", width: 132 }}
+          style={{ backgroundColor: "black", width: 145 }}
           variant="contained"
           value={product.id}
           onClick={onSubmit}
         >
-          Add to cart ({productAmount})
+          Add to cart 
         </Button>
+        {productAmount && <div><AddShoppingCartIcon/> ({productAmount})</div>}
       </div>
     </div>
   );
